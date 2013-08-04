@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SampleProject</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+	<ul>
+		<li><%= link_to "Home", root_path%></li>
+		<% if signed_in? %>
+		<li><%= link_to "Profile" , current_user %></li>
+		<li><%= link_to "Emails" , emails_path %></li>
+		<li><%= link_to "Settings",edit_user_path(current_user) %></li>
+		<% end %>
+		<% if signed_in? %>
+			<li><%= link_to "Sign out",signout_path %></li>
+		<% else %>
+			<li><%= link_to "Sign in", signin_path%></li>
+			<li><%= link_to "Sign up now!",signup_path %></li>
+		<% end %>
+	</ul>
+			
+<% flash.each do |key,value|%>
+	<%= value %>
+<% end %>
+<%= yield %>
+
+</body>
+</html>

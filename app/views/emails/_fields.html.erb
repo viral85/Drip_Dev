@@ -1,0 +1,22 @@
+<%= render 'shared/error_messages'%>
+<div class="field">
+	<%= f.label :from_name, "Name" %><br />
+	<%= f.text_field :from_name %>
+</div>
+<div class="field">
+	<%= f.label :from_email, "Send from" %><br />
+	<%= f.text_field :from_email%>
+</div>
+<div class="field">
+	<%= f.label :to_email, "Send to" %><br />
+	<%= f.text_field :to_email%>
+</div>
+<div class="field">
+	<%= f.label :subjects, "Subject" %><br />
+	<%= f.text_field :subject %>
+</div>
+<div class="field">
+	<%= f.label :text_body %><br />
+	<%= f.text_area :text_body%>
+</div><br/>
+<%= f.hidden_field :user_id , :value => current_user.id %>

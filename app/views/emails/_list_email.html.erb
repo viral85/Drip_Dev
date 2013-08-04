@@ -1,0 +1,26 @@
+<h1>Listing Emails</h1>
+
+<table border cellspacing=0 cellpadding=10>
+	<tr>
+		<td>Name</td>
+		<td>Send from</td>
+		<td>Send to</td>
+		<td>Subject</td>
+		<td>Body</td>
+		<td>Publised</td>
+		<td colspan=3>Actions</td>
+	</tr>
+	<% @emails.each do |email|%>
+	<tr>
+		<td><%= email.from_name %></td>
+		<td><%= email.from_email %></td>
+		<td><%= email.to_email%></td>
+		<td><%= email.subject%></td>
+		<td><%= email.text_body.truncate(30)%></td>
+		<td><%= link_to format_boolean(email.is_published?), {:controller => 'emails', :action => 'toggled_status', :id => email.id} %></td>
+		
+		<td><%= link_to "Show" ,email_path(email)%></td>
+		<td><%= link_to "Destroy" , email, confirm: 'Are you sure you want to delete this task?', method: :delete %></td></td>
+	</tr>
+	<% end %>
+</table>

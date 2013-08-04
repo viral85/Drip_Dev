@@ -1,0 +1,15 @@
+Steps to run
+
+1. Clone from github
+
+2. Bundle install
+
+3. Run migrations
+
+4. Versions 
+  a. Rails 3.2.13
+  b. Ruby 1.9.2
+
+5. Run rails server
+
+*Note: In show action you should be able to edit the fields by clicking on them. 

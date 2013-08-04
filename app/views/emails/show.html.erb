@@ -1,0 +1,21 @@
+<h3>*Inline edit works, click on text to edit. </h3>
+<table  cellspacing=0 cellpadding= 8>
+<tr>
+	<td align="right">Send From :</td>
+	<td> <%= best_in_place  @email, :from_email %></td>
+</tr>
+<tr>
+	<td align="right">Send to :</td>
+	<td> <%= best_in_place @email ,:to_email %></td>
+</tr>
+<tr>
+	<td align="right">Subject :</td>
+	<td> <%= best_in_place @email, :subject %></td>
+</tr>
+<tr>
+	<td align="right">Body :</td>
+	<td> <%= best_in_place @email, :text_body,  type: :textarea %></td>
+</tr>
+</table>
+<br />
+ <%= link_to "Back" ,emails_path %> 
